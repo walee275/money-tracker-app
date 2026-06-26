@@ -7,7 +7,7 @@ interface ToastProps {
 export function Toast({ message, type = 'success', onClose }: ToastProps) {
   return (
     <div
-      className={`fixed left-4 right-4 top-4 z-[100] mx-auto max-w-lg rounded-xl px-4 py-3 text-sm font-medium shadow-lg ${
+      className={`fixed left-4 right-4 z-[100] mx-auto max-w-lg rounded-xl px-4 py-3 text-sm font-medium shadow-lg top-[calc(env(safe-area-inset-top,0px)+1rem)] ${
         type === 'success'
           ? 'bg-emerald-600 text-white'
           : 'bg-red-600 text-white'

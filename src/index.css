@@ -11,11 +11,26 @@ html,
 body,
 #root {
   height: 100%;
+  min-height: 100dvh;
 }
 
 body {
   @apply bg-slate-50 text-slate-900 antialiased;
-  padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.layout-header {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 1rem);
+}
+
+.layout-main {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 6rem);
 }
 
 input[type='number']::-webkit-inner-spin-button,

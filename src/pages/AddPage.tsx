@@ -107,7 +107,6 @@ export function AddPage() {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             className="w-full rounded-xl border border-slate-200 bg-white px-4 py-4 text-2xl font-bold text-slate-900 outline-none ring-emerald-500 focus:ring-2"
-            autoFocus
           />
         </div>
 

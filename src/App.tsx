@@ -18,7 +18,7 @@ function App() {
 
   if (!ready) {
     return (
-      <div className="flex min-h-full items-center justify-center">
+      <div className="flex h-full items-center justify-center">
         <p className="text-sm text-slate-500">Loading…</p>
       </div>
     )
@@ -26,16 +26,20 @@ function App() {
 
   return (
     <HashRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/add" element={<AddPage />} />
-        <Route path="/people" element={<PeoplePage />} />
-        <Route path="/people/:id" element={<PersonDetailPage />} />
-        <Route path="/history" element={<HistoryPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-      <BottomNav />
+      <div className="flex h-full min-h-0 flex-col overflow-hidden">
+        <div className="min-h-0 flex-1 overflow-hidden">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/add" element={<AddPage />} />
+            <Route path="/people" element={<PeoplePage />} />
+            <Route path="/people/:id" element={<PersonDetailPage />} />
+            <Route path="/history" element={<HistoryPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
+        <BottomNav />
+      </div>
     </HashRouter>
   )
 }
